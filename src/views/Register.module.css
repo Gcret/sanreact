@@ -1,0 +1,68 @@
+.box{
+	width:1160px;
+	height:126px;
+	margin:0 auto
+}
+
+.imgs{
+	margin-top:44px;
+	margin-left:10px;
+	float:left
+}
+
+.imgs1{
+	float:right;
+	margin-top:50px;
+	margin-right:10px
+}
+
+.box1{
+	width:100%;
+	height:548px;
+	background:#f00;
+	overflow: hidden;
+}
+
+.forms{
+	width:780px;
+	height:300px;
+	margin:130px auto;
+	background:#fff;
+	overflow: hidden;
+	border-radius: 30px;
+}
+.forms1{
+	display: block;
+	width:400px;
+	height:50px;
+	margin:0px 190px;
+	margin-top:50px
+}
+.forms2{
+	display: block;
+	width:400px;
+	height:50px;
+	margin:20px 190px
+}
+.btn{
+	width:400px;
+	height:50px;
+	margin:0 190px
+}
+.li{
+	margin-left:700px;
+	cursor:pointer
+}
+.list{
+	width:460px;
+	display: block;
+	margin:30px 450px 10px;
+}
+.list1{
+	margin:0 10px;
+	color:#000
+}
+.list2{
+	width:850px;
+	margin-left:280px;
+}
