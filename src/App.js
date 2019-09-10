@@ -3,6 +3,7 @@ import {BrowserRouter as Router,Route,Link,NavLink,Redirect,Switch} from 'react-
 
 import Detail from './views/Detail';
 import Hou from './hou/Hou';
+import Cart from './views/Cart';
 import AsyncComponent from './AsyncComponent';
 
 
@@ -24,6 +25,7 @@ function App() {
 			     		<Route path="/login" component={Login}/>
 			     		<Route path="/index" component={Index}/>
 			     		<Route path="/detail" component={Detail}/>
+			     		<Route path="/cart" component={Cart}/>
 			     		<Route path="/hou" component={Hou}/>
 		     			<Redirect to="/index"/>
 		     		</Switch>
