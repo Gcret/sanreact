@@ -1,6 +1,6 @@
 import React,{Component} from 'react'
 import {NavLink} from 'react-router-dom';
-import { Input, Button,Icon,Menu,Dropdown, Carousel } from 'antd';
+import { Input, Button,Icon,Menu,Dropdown, Carousel,BackTop} from 'antd';
 import style from './Detail.module.css';
 
 
@@ -39,6 +39,10 @@ export default class Detail extends Component{
 						 &nbsp;<NavLink className={style.nav} to="/hou"><Icon type="read" />&nbsp;后台管理</NavLink>
 					 </div>
 				   </div> 
+				   
+				   <div>
+						<BackTop />
+					 </div>
 				   
 					 <div  className={style.topsection}>
 					 	<img src="http://r.uzaicdn.com/content/store/images/common/logo.png" />
@@ -109,9 +113,59 @@ export default class Detail extends Component{
 		                  </Dropdown></li>
 		                </ul>
               </div>
+              
+              
+              
 					 
-			
+						<div className={style.xiangq}>
+									<span className={style.biaot}>标题</span>
+									<img src=" " className={style.imgs1}/>
+									
+									<p className={style.chanpin}>产品编码：00010906</p>
+									<div className={style.chufa}><Icon type="environment" />&nbsp;出发地:北京</div>
+						</div>
 				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+						<div className={style.shangm}></div>
+					 
+					 <div className={style.footer}>
+					 		<div className={style.footer1}>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/nationalt.gif"/>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/icp.gif"/>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/5atravel.gif"/>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/zz.gif"/>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/jtel.gif"/>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/ttel.gif"/>
+					 		</div>
+						  <div className={style.list}>
+								<NavLink className={style.list1}>众信旅游</NavLink>
+								<NavLink className={style.list1}>众信历程</NavLink>
+								<NavLink className={style.list1}>众信品牌</NavLink>
+								<NavLink className={style.list1}>营业网点</NavLink>
+								<NavLink className={style.list1}>诚聘英才</NavLink>
+								<NavLink className={style.list1}>商务合作</NavLink>
+							</div>
+							<div className={style.list2}>
+								<NavLink className={style.list1}>Copyright©2005-2018 Uzai.com</NavLink>
+								<NavLink className={style.list1}> 许可证编号:L-TJ-CJ00059 </NavLink>
+								<NavLink className={style.list1}>津ICP备18003064号</NavLink>
+								<NavLink className={style.list1}> 悠哉呼叫中心来电显示号码为：10109898</NavLink>
+							</div>
+					 </div>
 			</div>
 		)
 	}

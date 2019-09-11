@@ -19,6 +19,19 @@
 .nav:hover{
 	color:#f00
 }
+
+.youc{
+	margin:0;
+	width:40px;
+	height:100%;
+	position: fixed;
+	z-index: 99999;
+	right:0;
+	top:0;
+	background:#000
+}
+
+
 .topsection{
     width: 1240px;
     margin: auto;
@@ -56,7 +69,7 @@
 
 .ul1 li{
     float:left;
-    margin-left:40px;
+    margin-left:35px;
   
 }
 .ul1{
@@ -83,12 +96,7 @@
 	height:450px;
 
 }
-.ant-carousel .slick-slide {
-  text-align: center;
-  height: 160px;
-  line-height: 160px;
-  overflow: hidden;	
-}
+
 .zong{
 	width:100%;
 	
@@ -105,7 +113,96 @@
 }
 .zujian{
 	width:1180px;
-	height:280px;
-	background:#f00;
+	height:310px;
+
 	margin:0 auto
+}
+.zujian1{
+	margin:10px 25px;
+	padding-bottom: 5px;
+	border-bottom:1px solid #ccc;
+	color:#000
+}
+.zujian1:hover{
+	border-bottom:1px solid #f00;
+	color:#f00
+}
+.succers{
+	width:1150px;
+	height:560px;
+	margin:20px auto;
+	
+}
+.succersleft{
+	float:left
+}
+.succersright{
+	float:right;
+	width:865px;
+	height:560px;
+
+}
+.succerss{
+	width:263px;
+	height:260px;
+	float:left;
+	margin:13px 12px
+}
+.imger{
+	width:263px;
+	height:190px;
+
+}
+.xiangq{
+	display: block;
+	width:263px;
+	height:46px;
+
+}
+.weizhi{
+	float:left;
+	margin-left:10px;
+}
+.many{
+	float:right;
+	margin-right:10px;
+	color:#f00
+}
+.situ{
+	width:1140px;
+	height:100px;
+	margin:10px auto
+}
+.shangm{
+	width:100%;
+	height:30px;
+	background:#fff8fa;
+	border-bottom:3px solid #EA1A56
+}
+.footer{
+	width:1130px;
+	height:150px;
+	margin:30px auto
+}
+.footer1{
+	width:1130px;
+	height:40px;
+}
+.imgs{
+	margin-left:65px;
+	cursor: pointer;
+}
+.list1{
+	margin:0 10px;
+	color:#000
+}
+.list2{
+	width:850px;
+	margin-left:145px;
+	height:50px
+}
+.list{
+	width:460px;
+	display: block;
+	margin:30px 325px 10px;
 }

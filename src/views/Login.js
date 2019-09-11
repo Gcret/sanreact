@@ -82,8 +82,9 @@ export default class Login extends Component{
 					this.setState({
 						sp:data.msg
 					})
-					localStorage.setItem('username',username)
-					window.location.href='/index'
+					console.log(data)
+					localStorage.setItem('token',data.data.token)
+					//window.location.href='/index'
 				}
 			}
 		})

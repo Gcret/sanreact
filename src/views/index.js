@@ -1,8 +1,8 @@
 import React,{Component} from 'react';
-import {NavLink} from 'react-router-dom';
-import { Input, Button,Icon,Menu,Dropdown, Carousel} from 'antd';
+import {BrowserRouter as Router,NavLink,Route,Redirect} from 'react-router-dom';
+import { Input, Button,Icon,Menu,Dropdown, Carousel,Switch,BackTop} from 'antd';
 import style from './Index.module.css';
-
+import AsyncComponent from '../AsyncComponent';
 
 const { Search } = Input;
 const menu = (
@@ -25,7 +25,11 @@ const menu = (
   </Menu>
 );
 
-
+const Aozhou = AsyncComponent(()=>require('../views/Aozhou'))
+const Ariben = AsyncComponent(()=>require('../views/Ariben'))
+const Adong = AsyncComponent(()=>require('../views/Adong'))
+const Azhong = AsyncComponent(()=>require('../views/Azhong'))
+const Ada = AsyncComponent(()=>require('../views/Ada'))
 export default class Index extends Component{
 
 	render(){
@@ -40,6 +44,9 @@ export default class Index extends Component{
 					 	<NavLink className={style.nav} to="/cart"><Icon type="file-add"/>&nbsp;我的订单</NavLink>&nbsp;	|
 						 &nbsp;<NavLink className={style.nav} to="/hou"><Icon type="read" />&nbsp;后台管理</NavLink>
 					 </div>
+				</div>
+				<div>
+						<BackTop />
 				</div>
 				
 				 <div  className={style.topsection}>
@@ -158,14 +165,95 @@ export default class Index extends Component{
 				</div>
 				</div>
 				
-					<div className="zujian">
+					<div className={style.zujian}>
+							<Router>
+								<div>
+								
+									<NavLink className={style.zujian1} to="/aozhou">国庆去欧洲</NavLink>
+									<NavLink className={style.zujian1} to="/ariben">国庆去日本</NavLink>
+									<NavLink className={style.zujian1} to="/adong">国庆去东南亚</NavLink>
+									<NavLink className={style.zujian1} to="/azhong">国庆去中东非</NavLink>
+									<NavLink className={style.zujian1} to="/ada">国庆去美洲</NavLink>
 							
-										
-					<div>
+		      			
+					     		<Route path="/aozhou" component={Aozhou}/>
+					     		<Route path="/ariben" component={Ariben}/>
+					     		<Route path="/adong" component={Adong}/>
+					     		<Route path="/azhong" component={Azhong}/>
+					     		<Route path="/ada" component={Ada}/>
+				     			<Redirect to="/aozhou"/>
+				     	
+				    
+				    	</div>	
+						</Router>
+							
+					</div>
 					
+					<div className={style.succers}>
+							<div className={style.succersleft}>
+									<img src = "https://img6.uzaicdn.com/uz/navigation/productFloor/ATT0001127128.jpg"/>
+							</div>
+							<div className={style.succersright}>
+									<div className={style.succerss}>
+										<img src = " " className={style.imger}/>
+										<span className={style.xiangq}>详情</span>
+										<span className={style.weizhi}>北京出发</span>
+										<span className={style.many}>￥ </span>
+									</div>
+									<div className={style.succerss}></div>
+									<div className={style.succerss}></div>
+									<div className={style.succerss}></div>
+									<div className={style.succerss}></div>
+									<div className={style.succerss}></div>
+							</div>
+					</div>
 				
-				
-				
+					<div className={style.situ}><img src="https://img8.uzaicdn.com/uz/advertisement/ATT0001126338.jpg"/></div>
+					
+					<div className={style.succers}>
+							<div className={style.succersleft}>
+									<img src = "https://img5.uzaicdn.com/uz/navigation/productFloor/ATT0001127132.jpg"/>
+							</div>
+							<div className={style.succersright}>
+									<div className={style.succerss}>
+										<img src = " " className={style.imger}/>
+										<span className={style.xiangq}>详情</span>
+										<span className={style.weizhi}>北京出发</span>
+										<span className={style.many}>￥ </span>
+									</div>
+									<div className={style.succerss}></div>
+									<div className={style.succerss}></div>
+									<div className={style.succerss}></div>
+									<div className={style.succerss}></div>
+									<div className={style.succerss}></div>
+							</div>
+					</div>
+					 <div className={style.shangm}></div>
+					 
+					 <div className={style.footer}>
+					 		<div className={style.footer1}>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/nationalt.gif"/>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/icp.gif"/>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/5atravel.gif"/>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/zz.gif"/>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/jtel.gif"/>
+					 			<img className={style.imgs} src="http://r.uzaicdn.com/content/store/images/common/ttel.gif"/>
+					 		</div>
+						  <div className={style.list}>
+								<NavLink className={style.list1}>众信旅游</NavLink>
+								<NavLink className={style.list1}>众信历程</NavLink>
+								<NavLink className={style.list1}>众信品牌</NavLink>
+								<NavLink className={style.list1}>营业网点</NavLink>
+								<NavLink className={style.list1}>诚聘英才</NavLink>
+								<NavLink className={style.list1}>商务合作</NavLink>
+							</div>
+							<div className={style.list2}>
+								<NavLink className={style.list1}>Copyright©2005-2018 Uzai.com</NavLink>
+								<NavLink className={style.list1}> 许可证编号:L-TJ-CJ00059 </NavLink>
+								<NavLink className={style.list1}>津ICP备18003064号</NavLink>
+								<NavLink className={style.list1}> 悠哉呼叫中心来电显示号码为：10109898</NavLink>
+							</div>
+					 </div>
 			</div>
 		)
 	}

@@ -1,3 +1,4 @@
+
 import React from 'react';
 import {BrowserRouter as Router,Route,Link,NavLink,Redirect,Switch} from 'react-router-dom';
 
@@ -27,7 +28,7 @@ function App() {
 			     		<Route path="/detail" component={Detail}/>
 			     		<Route path="/cart" component={Cart}/>
 			     		<Route path="/hou" component={Hou}/>
-		     			<Redirect to="/index"/>
+		     			<Redirect to="/detail"/>
 		     		</Switch>
       	</div>
       </Router>
