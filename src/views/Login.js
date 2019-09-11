@@ -2,8 +2,16 @@ import React,{Component} from 'react';
 import style from './Login.module.css';
 import { Input, Button} from 'antd';
 import {NavLink} from 'react-router-dom';
-
+import api from '../api/api_pro';
 export default class Login extends Component{
+	constructor(props){
+		super(props)
+		this.state={
+			iptuser:"",
+			iptpass:"",
+			sp:''
+		}
+	}
 	render(){
 		return(
 			<div>	
@@ -14,10 +22,12 @@ export default class Login extends Component{
 				
 				<div className={style.box1}>
 					<div className={style.forms}>
-						<Input className={style.forms1} placeholder="username" />
-						<Input className={style.forms2} placeholder="password" />
-						<Button className={style.btn} type="primary">登录</Button>
-						<div className={style.li} onClick={this.tap.bind(this)}>注册 ></div>
+							<h2>登录页面</h2>
+						<Input className={style.forms1} placeholder="username" onChange={this.tap1.bind(this)} defaultValue={this.state.iptuser}/>
+						<span className={style.zheng}>{this.state.sp}</span>
+						<Input className={style.forms2} placeholder="password" onChange={this.tap2.bind(this)} defaultValue={this.state.iptpass}/>
+						<Button className={style.btn} type="primary" onClick={this.btns.bind(this)}>登录</Button>
+						<div className={style.li} onClick={this.tap.bind(this)}>还没账号?请注册 ></div>
 					</div>
 				</div>
 				
@@ -43,7 +53,43 @@ export default class Login extends Component{
 	}
 	
 	tap(){
-		
-		
+		window.location.href='/register'	
 	}
+	tap1(e){
+		this.setState({
+			iptuser:e.target.value
+		})
+	}
+	tap2(e){
+		this.setState({
+			iptpass:e.target.value
+		})
+	}
+	btns(){
+		let username=this.state.iptuser;
+		let password=this.state.iptpass;
+		api.getLogin({username:username,password:password}).then((data)=>{
+			if(this.state.iptuser==''){
+				this.setState({
+					sp:'账号不能为空'
+				})
+			}else{
+				if(data.code==0){
+					this.setState({
+						sp:data.msg
+					})
+				}else{
+					this.setState({
+						sp:data.msg
+					})
+					localStorage.setItem('username',username)
+					window.location.href='/index'
+				}
+			}
+		})
+	}
+	
+	
+	
+	
 }

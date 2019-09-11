@@ -19,13 +19,16 @@
 .box1{
 	width:100%;
 	height:548px;
-	background:#f00;
+	background:url(http://r.uzaicdn.com/content/store/images/user/main1.jpg) no-repeat center;
 	overflow: hidden;
 }
-
+h2{
+	text-align: center;
+	margin-top:10px
+}
 .forms{
 	width:780px;
-	height:300px;
+	height:340px;
 	margin:130px auto;
 	background:#fff;
 	overflow: hidden;
@@ -38,16 +41,21 @@
 	margin:0px 190px;
 	margin-top:50px
 }
+.zheng{
+	margin-left:195px;
+	color:#f00;
+	font-size:16px
+}
 .forms2{
 	display: block;
 	width:400px;
 	height:50px;
-	margin:20px 190px
+	margin:10px 190px
 }
 .btn{
 	width:400px;
 	height:50px;
-	margin:0 190px
+	margin:10px 190px
 }
 .li{
 	margin-left:700px;
@@ -65,4 +73,5 @@
 .list2{
 	width:850px;
 	margin-left:280px;
+	height:50px
 }
