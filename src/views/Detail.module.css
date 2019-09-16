@@ -5,7 +5,7 @@
 }
 .box1{
 	margin-left:100px;
-	width:150px;
+	width:170px;
 	float:left
 }
 .ding{
@@ -15,7 +15,6 @@
 }
 .nav{
 	color:#000;
-	border-bottom: 2px solid #EA1A56;
 	padding-bottom: 50px;
 }
 .nav:hover{
@@ -76,9 +75,11 @@
 .ul1 a:hover{
     color:red;
 }
-.nav{
+.nav1{
 	width:100%;
-	height:30px
+	height:30px;
+	padding-bottom: 40px;
+	border-bottom: 2px solid #EA1A56;
 }
 
 .xiangq{
@@ -93,8 +94,8 @@
 	width:1080px;
 	height:60px;
 	margin:30px auto;
-	font-size:18px;
-	background:#f00;
+	font-size:20px;
+
 }
 .imgs1{
 	width:340px;
@@ -223,8 +224,29 @@
  	 
 }
 
+.sis{
+	width:1140px;
+	height:1885px;
+	background:#f8f8f8;
+	margin:50px auto;
+	overflow: hidden;
+}
+.sis1{
+	width:1060px;
+	height:140px;
+	margin:20px auto
+}
 
-
+.imgser{
+	display: block;
+	width:960px;
+	height:1360px;
+	margin:10px auto
+}
+.xingc{
+	text-align: center;
+	margin-top:100px;
+}
 
 
 

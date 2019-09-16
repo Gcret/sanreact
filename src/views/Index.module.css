@@ -146,22 +146,35 @@
 	width:263px;
 	height:260px;
 	float:left;
-	margin:13px 12px
+	margin:13px 12px;
+	
+}
+.zimger{
+	width:263px;
+	height: 190px;
+	overflow: hidden;
 }
 .imger{
+	display: block;
 	width:263px;
 	height:190px;
-
+	
+}
+.imger:hover{
+	 transform:scale(1.2,1.2);
+	transition:all 0.5s linear
 }
 .xiangq{
 	display: block;
 	width:263px;
 	height:46px;
-
+	overflow: hidden;
+	color:#000
 }
 .weizhi{
 	float:left;
 	margin-left:10px;
+	color:#000
 }
 .many{
 	float:right;

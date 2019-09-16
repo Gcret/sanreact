@@ -1,9 +1,10 @@
 import React,{Component} from 'react';
-import {BrowserRouter as Router,NavLink,Route,Redirect} from 'react-router-dom';
+import {BrowserRouter as Router,NavLink,Route,Redirect,Link} from 'react-router-dom';
 import { Input, Button,Icon,Menu,Dropdown, Carousel,Switch,BackTop} from 'antd';
 import style from './Index.module.css';
 import AsyncComponent from '../AsyncComponent';
-
+import api from '../api/api_pro';
+import Detail from './Detail';
 const { Search } = Input;
 const menu = (
   <Menu>
@@ -31,7 +32,13 @@ const Adong = AsyncComponent(()=>require('../views/Adong'))
 const Azhong = AsyncComponent(()=>require('../views/Azhong'))
 const Ada = AsyncComponent(()=>require('../views/Ada'))
 export default class Index extends Component{
-
+constructor(props){
+		super(props)
+		this.state={
+			list:[],
+			list1:[]
+		}
+	}
 	render(){
 		return(
 			<div>
@@ -181,10 +188,12 @@ export default class Index extends Component{
 					     		<Route path="/adong" component={Adong}/>
 					     		<Route path="/azhong" component={Azhong}/>
 					     		<Route path="/ada" component={Ada}/>
+					     		
 				     			<Redirect to="/aozhou"/>
 				     	
 				    
-				    	</div>	
+				    	</div>
+				    	
 						</Router>
 							
 					</div>
@@ -194,17 +203,22 @@ export default class Index extends Component{
 									<img src = "https://img6.uzaicdn.com/uz/navigation/productFloor/ATT0001127128.jpg"/>
 							</div>
 							<div className={style.succersright}>
-									<div className={style.succerss}>
-										<img src = " " className={style.imger}/>
-										<span className={style.xiangq}>详情</span>
-										<span className={style.weizhi}>北京出发</span>
-										<span className={style.many}>￥ </span>
-									</div>
-									<div className={style.succerss}></div>
-									<div className={style.succerss}></div>
-									<div className={style.succerss}></div>
-									<div className={style.succerss}></div>
-									<div className={style.succerss}></div>
+								{
+									this.state.list.map((item,i)=>{
+										return(
+											<div className={style.succerss} key={i}>
+												<Link to={{pathname:'/detail',query:{id:item.pid}}}>
+												<div className={style.zimger}><img src = {item.pimg} className={style.imger}/></div>
+												<span className={style.xiangq}>{item.pdesc}</span>
+												<span className={style.weizhi}>北京出发</span>
+												<span className={style.many}>￥ {item.pprice}</span>
+												</Link>
+											</div>
+										)
+									})
+								}
+									
+									
 							</div>
 					</div>
 				
@@ -215,17 +229,20 @@ export default class Index extends Component{
 									<img src = "https://img5.uzaicdn.com/uz/navigation/productFloor/ATT0001127132.jpg"/>
 							</div>
 							<div className={style.succersright}>
-									<div className={style.succerss}>
-										<img src = " " className={style.imger}/>
-										<span className={style.xiangq}>详情</span>
-										<span className={style.weizhi}>北京出发</span>
-										<span className={style.many}>￥ </span>
-									</div>
-									<div className={style.succerss}></div>
-									<div className={style.succerss}></div>
-									<div className={style.succerss}></div>
-									<div className={style.succerss}></div>
-									<div className={style.succerss}></div>
+									{
+									this.state.list1.map((item,i)=>{
+										return(
+											<div className={style.succerss} key={i}>
+											<Link to={{pathname:'/detail',query:{id:item.pid}}}>
+												<div className={style.zimger}><img src = {item.pimg} className={style.imger}/></div>
+												<span className={style.xiangq}>{item.pdesc}</span>
+												<span className={style.weizhi}>北京出发</span>
+												<span className={style.many}>￥ {item.pprice}</span>
+												</Link>
+											</div>
+										)
+									})
+								}
 							</div>
 					</div>
 					 <div className={style.shangm}></div>
@@ -257,4 +274,16 @@ export default class Index extends Component{
 			</div>
 		)
 	}
+	componentDidMount(){	
+			api.getProductList({uid:200006}).then((data)=>{
+				this.setState({list:data.data})
+			})
+			api.getProductList({uid:200007}).then((data)=>{
+				this.setState({list1:data.data})
+			})
+		}
+	
+	
+	
+	
 }

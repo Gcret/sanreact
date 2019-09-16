@@ -1,0 +1,20 @@
+html  body { height:100%}
+
+.section{
+    width:1300px;
+    /* height:800px; */
+    background:white;
+    position: relative;
+    left:140px;
+    top:50px;
+    -webkit-box-shadow: #666 0px 0px 10px;
+    -moz-box-shadow: #666 0px 0px 10px;
+    box-shadow: #666 0px 0px 10px;
+    background: white;
+}
+.biaoti{
+    text-align: center;
+}
+
+
+

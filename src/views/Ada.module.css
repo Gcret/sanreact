@@ -1,11 +1,13 @@
-.yi{
+
+
+.san{
 	width:210px;
 	height:255px;
 	margin-top:10px;
 	float:left;
 	margin-left:20px;
 }
-.yi:hover{
+.san:hover{
 	box-shadow: 3px 3px 15px 3px blue ;
 	
 }
@@ -13,6 +15,7 @@
 .xiang:hover{
 	  transform:translatey(-10px);
 }
+
 .er{
 	width:210px;
 	height:255px;
@@ -20,27 +23,44 @@
 	float:right;
 	margin-right:20px
 }
-.imgs{
+.zimger{
+	width:210px;
+	height: 155px;
+	overflow: hidden;
+}
+ .imgs{
+ 	display: block;
 	width:210px;
 	height:155px;	
 }
-.xiang{
+.imgs:hover{
+	 transform:scale(1.1,1.1);
+	transition:all 0.5s 
+}
+
+.san .xiang{
 	display:block;
 	width:210px;
 	height:60px;
-	overflow: hidden
+	overflow: hidden;
+	color:#000
 }
-
-.qian{
+.san .xiang .xiang1{
+	display: block;
+	width:210px;
+	height:100px
+}
+.san .qian{
 	float:left;
 	margin-top:10px;
 	margin-left:5px;
 	color:#f00
 }
-.qiang{
+.san .qiang{
 	width:68px;
 	height:24px;
 	background:#ea1a56;
+	color:#fff;
 	border-radius:22px ;
 	float:right;
 	margin-top:10px;

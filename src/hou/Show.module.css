@@ -1,0 +1,76 @@
+.input4{
+    width:270px;
+    margin-left:5px;
+}
+.btn{
+    float: right;
+    margin-right:62px;
+}
+.shangpin{
+    width:1200px;
+    height:200px;
+    /* border:1px solid black; */
+    margin:33px 0px 0px 47px;
+    -webkit-box-shadow: #666 0px 0px 10px;
+    -moz-box-shadow: #666 0px 0px 10px;
+    box-shadow: #666 0px 0px 7px;
+    background: white;
+    border-radius: 5px;
+    position: relative;
+}
+
+.shangpinimg{
+    width:180px;
+    height:180px;
+    margin:8px 27px;
+}
+.shangpinname{
+    width:178px;
+    height:50px;
+    /* border:1px solid black; */
+    margin-left:230px;
+    margin-top:-196px;
+    
+    line-height:50px;
+    overflow: hidden;
+    white-space: nowrap;  
+   text-overflow:ellipsis; 
+}
+.shangpinpid{
+    font-size: 20px;
+    color:red;
+    margin-top:0px;
+    margin-left:0px;
+    position: absolute;
+    left:229px;
+    top:157px;
+}
+.shangpinpprice{
+    position: absolute;
+    left:229px;
+    top:105px;
+}
+.shangpinpdesc{
+    width:500px;
+    height:175px;
+    border:1px solid black;
+    clear: both;
+    position: absolute;
+    left:420px;
+    top:12px;
+    overflow: auto;
+     /* white-space: nowrap;  */
+    text-overflow:ellipsis; 
+    word-wrap: break-word;
+     word-break: normal;
+}
+.btn1{
+    position: absolute;
+    right:20px;
+    top:12px;
+}
+.btn2{
+    position: absolute;
+    right:20px;
+    bottom:12px;
+}

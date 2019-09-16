@@ -10,11 +10,11 @@ export default{
 	getProductList:params=>{		//首页展示列表
 		return API.GET('/productlist.php',params)
 	},
-	getAddList:params=>{		//添加商品
-		return API.GET('/goods-add.php',params)
+	getAddList:params=>{		//添加购物车商品
+		return API.GET('/add-product.php',params)
 	},
 	getDelList:params=>{		//删除商品
-		return API.GET('/goods-delete.php',params)
+		return API.GET('/cart-delete.php',params)
 	},
 	getDetail:params=>{			//详情
 		return API.GET('/detail.php',params)
