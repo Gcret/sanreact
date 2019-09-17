@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import {BrowserRouter as Router,NavLink,Route,Redirect,Link} from 'react-router-dom';
-import { Input, Button,Icon,Menu,Dropdown, Carousel,Switch,BackTop} from 'antd';
+import {BrowserRouter as Router,NavLink,Route,Redirect,Link,Switch} from 'react-router-dom';
+import { Input, Button,Icon,Menu,Dropdown, Carousel,BackTop} from 'antd';
 import style from './Index.module.css';
 import AsyncComponent from '../AsyncComponent';
 import api from '../api/api_pro';
@@ -173,7 +173,9 @@ constructor(props){
 				</div>
 				
 					<div className={style.zujian}>
+					
 							<Router>
+							
 								<div>
 								
 									<NavLink className={style.zujian1} to="/aozhou">国庆去欧洲</NavLink>
@@ -188,13 +190,14 @@ constructor(props){
 					     		<Route path="/adong" component={Adong}/>
 					     		<Route path="/azhong" component={Azhong}/>
 					     		<Route path="/ada" component={Ada}/>
-					     		
-				     			<Redirect to="/aozhou"/>
-				     	
+					     		<Redirect to="/aozhou"/>
+				     		
+				     		
 				    
 				    	</div>
-				    	
-						</Router>
+				    		
+				    	</Router>
+						
 							
 					</div>
 					

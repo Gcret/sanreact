@@ -18,6 +18,9 @@ export default{
 	},
 	getDetail:params=>{			//详情
 		return API.GET('/detail.php',params)
+	},
+	getCart:params=>{			//查询
+		return API.GET('/cart-list.php',params)
 	}
 }
 	

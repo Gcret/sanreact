@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Input, Button, Modal } from 'antd';
+import { Input, Button, Modal,Empty ,Pagination } from 'antd';
 import style from './Show.module.css';
 import axios from 'axios';
 // import api from '../api/api_pro';
-
 
 
 
@@ -21,19 +20,34 @@ export default class Show extends Component {
             ipt6: '',
             ipt7: '',
             ipt8: '',
-            id: 0
+            id: 0,
+            display: "none"
         }
     }
 
     render() {
         return (
             <div>
+                
+                
                 <div >
                     <Input placeholder="商品图片" className={style.input4} size="small" onChange={this.ipt1.bind(this)} defaultValue={this.state.ipt1} />
                     <Input placeholder="商品名称" className={style.input4} size="small" onChange={this.ipt2.bind(this)} defaultValue={this.state.ipt2} />
                     <Input placeholder="商品价格" className={style.input4} size="small" onChange={this.ipt3.bind(this)} defaultValue={this.state.ipt3} />
                     <Input placeholder="商品描述" className={style.input4} size="small" onChange={this.ipt4.bind(this)} defaultValue={this.state.ipt4} />
                     <Button type="danger" size="small" className={style.btn} onClick={this.add.bind(this)}>添加商品</Button>
+                    <Button type="danger" size="small" onClick={this.sort1.bind(this)}>从大到小(根据商品价格排序)</Button>
+                    <Button type="danger" size="small" onClick={this.sort2.bind(this)}>从小到大(根据商品价格排序)</Button>
+                </div>
+               
+                <div className={style.zanshi} display={this.state.display}>
+                    <div className={style.yeshu}>
+                        <div className={style.yeshu2}>
+                            <Pagination defaultCurrent={1} total={50} />
+                        </div>
+                    </div>
+                
+                <Empty description={"没有更多的数据"}/>
                 </div>
                 <hr />
                 {
@@ -66,6 +80,7 @@ export default class Show extends Component {
 
 
                                 </Modal>
+                               
                             </div>
                         )
                     })
@@ -74,13 +89,14 @@ export default class Show extends Component {
         )
     }
     componentDidMount() {
-        let to = localStorage.getItem("token")
-        console.log(to)
-        if (to) {
+        // let to = localStorage.getItem("token")
+        // console.log(to)
+        // if (to) {
             axios({
                 url: 'http://jx.xuzhixiang.top/ap/api/productlist.php',
                 params: {
-                    uid: 22926
+                    uid:200006,
+                   
                 }
             }).then((data) => {
                 console.log(data)
@@ -89,20 +105,45 @@ export default class Show extends Component {
                 this.setState({
                     list: arr
                 })
+                if(arr.length === 0){
+                    console.log(111)
+                    this.setState=({
+                        display:"none"
+                    })
+                }
             });
 
-        } else {
-            alert("请登录")
-        }
-
+     
 
 
 
     }
 
+    sort1(){
+        let arr = this.state.list;
+       var aa = arr.sort(function(a,b){
+          return b.pprice -a.pprice
+       })
+       console.log(aa)
+    this.setState({
+        list:aa
+    })
+    }
+    sort2(){
+        let arr = this.state.list;
+       var aa = arr.sort(function(a,b){
+          return a.pprice-b.pprice
+       })
+       console.log(aa)
+    this.setState({
+        list:aa
+    })
+    }
+
 
     del() {
         console.log("删除商品")
+        
     }
     ipt1(e) {
         this.setState({
@@ -133,7 +174,7 @@ export default class Show extends Component {
         axios({
             url: ' http://jx.xuzhixiang.top/ap/api/goods/goods-add.php',
             params: {
-                uid: 23095,
+                uid: 200008,
                 pimg: img,
                 pname: name,
                 pprice: price,
@@ -144,7 +185,7 @@ export default class Show extends Component {
             axios({
                 url: 'http://jx.xuzhixiang.top/ap/api/productlist.php',
                 params: {
-                    uid: 23095
+                    uid: 200008
                 }
             }).then((data) => {
                 let arr = data.data.data
@@ -174,7 +215,7 @@ export default class Show extends Component {
         let price = this.refs.ipt7.state.value;
         let desc = this.refs.ipt8.state.value;
         axios({
-            url: ' http://jx.xuzhixiang.top/ap/api/goods/goods-update.php',
+            url: 'http://jx.xuzhixiang.top/ap/api/goods/goods-update.php',
             params: {
                 pid: id,
                 pname: name,

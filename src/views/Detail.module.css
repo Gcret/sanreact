@@ -225,28 +225,61 @@
 }
 
 .sis{
-	width:1140px;
-	height:1885px;
+	width:1115px;
+	height:3355px;
 	background:#f8f8f8;
 	margin:50px auto;
+	margin-left:120px;
 	overflow: hidden;
 }
 .sis1{
 	width:1060px;
 	height:140px;
-	margin:20px auto
+	margin:-230px auto
 }
-
+.sis2{
+	width:1060px;
+	height:140px;
+	margin:30px auto;
+	margin-top:265px
+}
 .imgser{
 	display: block;
 	width:960px;
 	height:1360px;
-	margin:10px auto
+	margin:20px auto
 }
 .xingc{
-	text-align: center;
-	margin-top:100px;
+	text-align: left;
+	margin-top:115px;
+	margin-left:30px
 }
+.xiangc{
+	width:1060px;
+	height:140px;
+	margin:30px auto
+}
+
+.xiangxi2{
+	margin:40px 0
+}
+.xvzhi{
+	width:1060px;
+	height:140px;
+	margin:-305px auto;
+}
+
+.fuwub{
+	width:1060px;
+	margin:345px auto
+}
+
+.maodian{
+	margin-left:-120px;
+	width:95px;
+	height:265px;
+}
+
 
 
 
