@@ -83,7 +83,7 @@ export default class Login extends Component{
 						sp:data.msg
 					})
 					//console.log(data)
-					localStorage.setItem('token',data.data.token)
+					localStorage.setItem('username',data.data.username)
 					window.location.href='/index'
 				}
 			}

@@ -422,11 +422,12 @@ export default class Ariben extends Component{
 			let id = this.props.location.query.id;
 			let num = this.state.iptshu;
 			api.getAddList({uid:200006,pid:id,pnum:num}).then((data)=>{
-					//console.log(data)
+					alert('订单已添加,请在我的订单中查询/修改资料')
 			})			 	
 		}
 		
 		componentDidMount(){	
+			console.log(this.props.location.query)
 			api.getDetail({id:this.props.location.query.id}).then((data)=>{
 			//	console.log(this.props)
 				this.setState({list:data.data})

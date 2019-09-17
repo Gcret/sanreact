@@ -95,7 +95,7 @@ export default class Show extends Component {
             axios({
                 url: 'http://jx.xuzhixiang.top/ap/api/productlist.php',
                 params: {
-                    uid:200006,
+                    uid:200007,
                    
                 }
             }).then((data) => {
@@ -174,7 +174,7 @@ export default class Show extends Component {
         axios({
             url: ' http://jx.xuzhixiang.top/ap/api/goods/goods-add.php',
             params: {
-                uid: 200008,
+                uid: 200007,
                 pimg: img,
                 pname: name,
                 pprice: price,
@@ -185,7 +185,7 @@ export default class Show extends Component {
             axios({
                 url: 'http://jx.xuzhixiang.top/ap/api/productlist.php',
                 params: {
-                    uid: 200008
+                    uid: 200007
                 }
             }).then((data) => {
                 let arr = data.data.data

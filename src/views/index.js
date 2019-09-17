@@ -190,6 +190,7 @@ constructor(props){
 					     		<Route path="/adong" component={Adong}/>
 					     		<Route path="/azhong" component={Azhong}/>
 					     		<Route path="/ada" component={Ada}/>
+					     		
 					     		<Redirect to="/aozhou"/>
 				     		
 				     		

@@ -5,14 +5,14 @@ import {BrowserRouter as Router,Route,Link,NavLink,Redirect,Switch} from 'react-
 import Detail from './views/Detail';
 import Hou from './hou/Hou';
 import Cart from './views/Cart';
-import Aozhou from './views/Aozhou';
+
 import AsyncComponent from './AsyncComponent';
 
 
 const Register = AsyncComponent(()=>require('./views/Register'))
 const Login = AsyncComponent(()=>require('./views/Login'))
 const Index = AsyncComponent(()=>require('./views/Index'))
-//const Detail = asyncComponent(()=>require('./views/Detail'))
+//const Detail = AsyncComponent(()=>require('./views/Detail'))
 
 
 function App() {
@@ -29,6 +29,7 @@ function App() {
 			     		<Route path="/detail" component={Detail}/>
 			     		<Route path="/cart" component={Cart}/>
 			     		<Route path="/hou" component={Hou}/>
+			     		
 		     			<Redirect to="/index"/>
 		     		</Switch>
       	</div>

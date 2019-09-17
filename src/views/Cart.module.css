@@ -24,6 +24,48 @@ body{
     left:100px;
     top:25px;
 }
+.qian{
+	color:#f00
+}
+.feiyong{
+	margin-left:20px;
+	margin-top:10px
+}
+.jisuan{
+	margin-left:20px;
+	margin-top:20px
+}
+.zongji{
+	width:300px;
+	position: absolute;
+	left:110px;
+	bottom: 15px;
+	cursor: pointer;
+}
+.zongjia9{
+	color:#f00;
+	font-size:14px
+}
+.zil{
+	margin:10px 30px
+}
+.shouye5{
+	position: absolute;
+	top:200px;
+	left:110px
+}
+.dianwo{
+	color:#f00;
+	cursor: pointer;
+}
+.dianwo1{
+	margin-top:100px
+}
+.jiages{
+	display: block;
+	float:left;
+	margin:0 10px
+}
 .section{
     width:830px;
     height:276px;
