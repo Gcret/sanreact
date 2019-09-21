@@ -1,6 +1,6 @@
 
 import React from 'react';
-import {BrowserRouter as Router,Route,Link,NavLink,Redirect,Switch} from 'react-router-dom';
+import {HashRouter as Router,Route,Link,NavLink,Redirect,Switch} from 'react-router-dom';
 
 import Detail from './views/Detail';
 import Hou from './hou/Hou';
@@ -21,17 +21,16 @@ function App() {
       
       <Router>
       	<div>
-      		
-      		<Switch>
+
 			     		<Route path="/register" component={Register}/>
 			     		<Route path="/login" component={Login}/>
 			     		<Route path="/index" component={Index}/>
-			     		<Route path="/detail" component={Detail}/>
+			     		<Route path="/detail/:id" component={Detail}/>
 			     		<Route path="/cart" component={Cart}/>
 			     		<Route path="/hou" component={Hou}/>
-			     		
-		     			<Redirect to="/index"/>
-		     		</Switch>
+			     		<Redirect to="login"/>
+
+      		
       	</div>
       </Router>
     </div>

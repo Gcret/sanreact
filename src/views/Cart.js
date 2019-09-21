@@ -16,10 +16,10 @@ export default class Cart extends Component {
 		qian: []
 	}
 	gouwus() {
-		window.location.href = "/Login"
+		window.location.href = "#/Login"
 	}
 	gouwus1() {
-		window.location.href = "/index"
+		window.location.href = "#/index"
 	}
 	render() {
 

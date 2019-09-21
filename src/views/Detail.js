@@ -419,7 +419,7 @@ export default class Ariben extends Component{
 			
 		}
 		tijiao(){
-			let id = this.props.location.query.id;
+			let id = this.props.match.params.id;
 			let num = this.state.iptshu;
 			api.getAddList({uid:200006,pid:id,pnum:num}).then((data)=>{
 					alert('订单已添加,请在我的订单中查询/修改资料')
@@ -427,8 +427,8 @@ export default class Ariben extends Component{
 		}
 		
 		componentDidMount(){	
-			console.log(this.props.location.query)
-			api.getDetail({id:this.props.location.query.id}).then((data)=>{
+			console.log(this.props.match.params)
+			api.getDetail({id:this.props.match.params.id}).then((data)=>{
 			//	console.log(this.props)
 				this.setState({list:data.data})
 			})

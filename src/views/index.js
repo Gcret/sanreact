@@ -1,11 +1,13 @@
 import React,{Component} from 'react';
-import {BrowserRouter as Router,NavLink,Route,Redirect,Link,Switch} from 'react-router-dom';
+import {HashRouter as Router,NavLink,Route,Redirect,Link,Switch} from 'react-router-dom';
 import { Input, Button,Icon,Menu,Dropdown, Carousel,BackTop} from 'antd';
 import style from './Index.module.css';
 import AsyncComponent from '../AsyncComponent';
 import api from '../api/api_pro';
 import Detail from './Detail';
+import axios from 'axios';
 const { Search } = Input;
+
 const menu = (
   <Menu>
     <Menu.Item>
@@ -36,7 +38,8 @@ constructor(props){
 		super(props)
 		this.state={
 			list:[],
-			list1:[]
+			list1:[],
+			list4:[]
 		}
 	}
 	render(){
@@ -44,8 +47,8 @@ constructor(props){
 			<div>
 				<div className={style.box}>
 					<div className={style.box1}>
-						<NavLink className={style.nav} to="/login"><Icon type="user"/>登录</NavLink>&nbsp;	|
-						 &nbsp;<NavLink className={style.nav} to="/register"><Icon type="form"/>注册</NavLink>
+						<NavLink className={style.nav} to="/login"><Icon type="user"/>&nbsp;登录</NavLink>&nbsp;	|
+						 &nbsp;<NavLink className={style.nav} to="/register"><Icon type="form"/>&nbsp;注册</NavLink>
 					 </div>
 					 <div className={style.ding}>
 					 	<NavLink className={style.nav} to="/cart"><Icon type="file-add"/>&nbsp;我的订单</NavLink>&nbsp;	|
@@ -129,18 +132,17 @@ constructor(props){
 				<div className={style.lunbo}>
 			
 				  <Carousel effect="fade" autoplay="true">
-				    <div>
-				      <img src="https://img7.uzaicdn.com/uz/advertisement/ATT0001127121.jpg"/>
-				    </div>
-				    <div>
-				      <img src="https://img6.uzaicdn.com/uz/advertisement/ATT0001085549.jpg"/>
-				    </div>
-				    <div>
-				      <img src="https://img5.uzaicdn.com/uz/advertisement/ATT0001126465.jpg"/>
-				    </div>
-				    <div>
-				      <img src="https://img9.uzaicdn.com/uz/advertisement/ATT0001127291.jpg"/>
-				    </div>
+				  {
+				  	this.state.list4.map((item,i)=>{
+				  		return(
+				  			<div>
+						      <img className={style.imga} src={item.banner_img_url}/>
+						    </div>
+				  		)
+				  	})
+				  }
+				    
+				    
 				  </Carousel>
 			
 				
@@ -174,27 +176,27 @@ constructor(props){
 				
 					<div className={style.zujian}>
 					
-							<Router>
 							
-								<div>
+							
 								
-									<NavLink className={style.zujian1} to="/aozhou">国庆去欧洲</NavLink>
-									<NavLink className={style.zujian1} to="/ariben">国庆去日本</NavLink>
-									<NavLink className={style.zujian1} to="/adong">国庆去东南亚</NavLink>
-									<NavLink className={style.zujian1} to="/azhong">国庆去中东非</NavLink>
-									<NavLink className={style.zujian1} to="/ada">国庆去美洲</NavLink>
-							
-		      			
-					     		<Route path="/aozhou" component={Aozhou}/>
-					     		<Route path="/ariben" component={Ariben}/>
-					     		<Route path="/adong" component={Adong}/>
-					     		<Route path="/azhong" component={Azhong}/>
-					     		<Route path="/ada" component={Ada}/>
+								
+									<NavLink className={style.zujian1} to="/index/aozhou">国庆去欧洲</NavLink>
+									<NavLink className={style.zujian1} to="/index/ariben">国庆去日本</NavLink>
+									<NavLink className={style.zujian1} to="/index/adong">国庆去东南亚</NavLink>
+									<NavLink className={style.zujian1} to="/index/azhong">国庆去中东非</NavLink>
+									<NavLink className={style.zujian1} to="/index/ada">国庆去美洲</NavLink>
+					<Router>
+						<div>
+					     		<Route path="/index/aozhou" component={Aozhou}/>
+					     		<Route path="/index/ariben" component={Ariben}/>
+					     		<Route path="/index/adong" component={Adong}/>
+					     		<Route path="/index/azhong" component={Azhong}/>
+					     		<Route path="/index/ada" component={Ada}/>
 					     		
-					     		<Redirect to="/aozhou"/>
+					     		<Redirect to="/index/aozhou"/>
+				   
 				     		
-				     		
-				    
+	
 				    	</div>
 				    		
 				    	</Router>
@@ -211,7 +213,7 @@ constructor(props){
 									this.state.list.map((item,i)=>{
 										return(
 											<div className={style.succerss} key={i}>
-												<Link to={{pathname:'/detail',query:{id:item.pid}}}>
+												<Link to={'/detail/'+item.pid}>
 												<div className={style.zimger}><img src = {item.pimg} className={style.imger}/></div>
 												<span className={style.xiangq}>{item.pdesc}</span>
 												<span className={style.weizhi}>北京出发</span>
@@ -237,7 +239,7 @@ constructor(props){
 									this.state.list1.map((item,i)=>{
 										return(
 											<div className={style.succerss} key={i}>
-											<Link to={{pathname:'/detail',query:{id:item.pid}}}>
+											<Link  to={'/detail/'+item.pid}>
 												<div className={style.zimger}><img src = {item.pimg} className={style.imger}/></div>
 												<span className={style.xiangq}>{item.pdesc}</span>
 												<span className={style.weizhi}>北京出发</span>
@@ -284,6 +286,9 @@ constructor(props){
 			})
 			api.getProductList({uid:200007}).then((data)=>{
 				this.setState({list1:data.data})
+			})
+			axios.get('http://jx.xuzhixiang.top/ap/api/bannerlist.php',{params:{uid:200011}}).then((data)=>{
+				this.setState({list4:data.data.data})
 			})
 		}
 	

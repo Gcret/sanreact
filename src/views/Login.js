@@ -53,7 +53,7 @@ export default class Login extends Component{
 	}
 	
 	tap(){
-		window.location.href='/register'	
+		window.location.href='#/register'	
 	}
 	tap1(e){
 		this.setState({
@@ -66,31 +66,37 @@ export default class Login extends Component{
 		})
 	}
 	btns(){
+		
+		
 		let username=this.state.iptuser;
 		let password=this.state.iptpass;
-		api.getLogin({username:username,password:password}).then((data)=>{
-			if(this.state.iptuser==''){
+		
+		if(this.state.iptuser &&  this.state.iptpass){
+			var reg = /^[a-zA-Z0-9_-]{4,16}$/;
+			if(!reg.test(username)){
 				this.setState({
-					sp:'账号不能为空'
+					sp:'请输入4-16位数字/字母组合'
 				})
 			}else{
-				if(data.code==0){
-					this.setState({
-						sp:data.msg
-					})
-				}else{
-					this.setState({
-						sp:data.msg
-					})
-					//console.log(data)
-					localStorage.setItem('username',data.data.username)
-					window.location.href='/index'
-				}
-			}
-		})
+				api.getLogin({username:this.state.iptuser,password:this.state.iptpass}).then((data)=>{
+					console.log(data)
+					if(data.code==0){
+						this.setState({
+							sp:'请检查用户名或者密码'
+						})
+					}else{
+						this.setState({
+							sp:'登录成功'
+						})
+						window.location.href='#/index'
+					}
+				})
+			}			
+		}else{
+			this.setState({
+				sp:'请输入账号和密码'
+			})
+		}
 	}
-	
-	
-	
 	
 }

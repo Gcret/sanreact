@@ -59,7 +59,7 @@ export default class Register extends Component{
 	}
 	
 	tap(){
-		window.location.href='/login'
+		window.location.href='#/login'
 	}
 	tap1(e){
 		this.setState({

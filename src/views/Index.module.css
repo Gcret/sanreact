@@ -19,7 +19,10 @@
 .nav:hover{
 	color:#f00
 }
-
+.imga{
+	width:100%;
+	height:100%
+}
 .youc{
 	margin:0;
 	width:40px;
@@ -95,6 +98,10 @@
 	width:100%;
 	height:450px;
 
+}
+.imgsss img{
+	width:100%;
+	height:100%
 }
 
 .zong{

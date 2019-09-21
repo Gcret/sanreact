@@ -18,7 +18,7 @@ export default class Aozhou extends Component{
 					this.state.list.map((item,i)=>{
 						return(
 							<div className={style.san} key={i}>
-								<Link to={{pathname:'/detail',query:{id:item.pid}}}>
+								<Link to={'/detail/'+item.pid}>
 								<div className={style.zimger}><img src ={item.pimg} className={style.imgs}/></div>
 								<span className={style.xiang}><span className={style.xiang1}>{item.pdesc}</span></span>
 								<span className={style.qian}>￥ {item.pprice}</span>
